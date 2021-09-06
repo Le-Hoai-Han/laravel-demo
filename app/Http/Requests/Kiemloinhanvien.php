@@ -26,9 +26,22 @@ class Kiemloinhanvien extends FormRequest
         return [
             'hoten'=>'required|unique:nhanvien|max:255',
             'namsinh'=>'required|date',
-            'gioitinh'=>'required|max:3|min:2',
+            'gioitinh'=>'required',
             'diachi'=>'required|min:5',
             'phongban'=>'required'
+        ];
+    }
+    
+    public function messages()
+    {
+        return[
+            'hoten.required'=>'Họ tên không được để trống',
+            'hoten.unique'=>'Họ tên đã được sử dụng',
+            'namsinh.required'=>'Năm sinh tên không được để trống',
+            'namsinh.date'=>'Năm sinh phải là định dạng ngày tháng năm',
+            'gioitinh.required'=>'Giới tính tên không được để trống',
+            'diachi.required'=>'Địa chỉ tên không được để trống',
+            'phongban.required'=>'Phòng ban tên không được để trống',
         ];
     }
 }

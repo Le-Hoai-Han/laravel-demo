@@ -264,4 +264,6 @@ $(function () {
     data: salesGraphChartData,
     options: salesGraphChartOptions
   })
+///dinh dang ngay
+  document.getElementById("dateField").value = new Date().toISOString().substring(0, 10)
 })
